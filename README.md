@@ -70,8 +70,8 @@
     <nav>
         <a href="#">Home</a>
         <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
+        <a href="service.html">Services</a>
+        <a href="contact.html">Contact</a>
     </nav>
 
     <div class="homepage">
