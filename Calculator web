@@ -1,0 +1,106 @@
+#Calculator
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Simple Calculator</title>
+<style>
+    body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.calculator {
+    background-color: #62c8cc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(197, 25, 174, 0.1);
+}
+
+label, select, input {
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #4caf50;
+    color: #f10ab8;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #16e720;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+</style>
+</head>
+<body background="https://rockcontent.com/wp-content/uploads/2021/02/interactive-calculator-1024x682.png">
+
+    <div class="calculator">
+        <h2><b> Simple Calculator</b></h2>
+        <label for="num1"><b>Enter first number:</b></label>
+        <input type="number" id="num1">
+
+        <label for="operation"><b>Select operation:</b></label>
+        <select id="operation">
+            <option value="add">Addition (+)</option>
+            <option value="subtract">Subtraction (-)</option>
+            <option value="multiply">Multiplication (*)</option>
+            <option value="divide">Division (/)</option>
+        </select>
+
+        <label for="num2"><b>Enter second number:</b></label>
+        <input type="number" id="num2">
+
+        <button onclick="calculate()"><b>Calculate</b></button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculate() {
+    // Get input values and operation choice
+    var num1 = parseFloat(document.getElementById("num1").value);
+    var num2 = parseFloat(document.getElementById("num2").value);
+    var operation = document.getElementById("operation").value;
+
+    // Perform calculation based on the selected operation
+    var result;
+    switch (operation) {
+        case "add":
+            result = num1 + num2;
+            break;
+        case "subtract":
+            result = num1 - num2;
+            break;
+        case "multiply":
+            result = num1 * num2;
+            break;
+        case "divide":
+            result = num1 / num2;
+            break;
+        default:
+            result = "Invalid operation";
+    }
+
+    // Display the result
+    document.getElementById("result").innerText = "Result: " + result;
+}
+    </script>
+
+</body>
+</html>
