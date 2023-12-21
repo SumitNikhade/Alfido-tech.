@@ -1,0 +1,843 @@
+#portfolio website
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio </title>
+ <style>
+    @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Libre+Baskerville&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,300;0,400;0,700;1,500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration:none;
+    border: none;
+    outline:none;
+    scroll-behavior: smooth;
+    font-family:'poppins',sans-serif;
+}
+
+:root{
+    --bg-color:#1f242d;
+    --second-bg-color:#323946;
+    --text-color:#fff;
+    --main-color:#0ef;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x:hidden;
+}
+
+body
+{
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.section{
+    min-height:100vh;
+    padding: 10rem 9% 2rem;
+    display: flex;
+    justify-content: center;
+
+    
+}
+
+
+
+.header{
+    position: fixed;
+    top: 0;
+    left:0;
+    width:100%;
+    padding: 2rem 9%;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+ 
+
+.header.sticky {
+    border-bottom: .1rem solid rgba(0, 0, 0, .2);
+}
+
+.logo{
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+    cursor: default;
+}
+
+.navbar a {
+    font-size: 1.7rem;
+    color:var(--text-color);
+    margin-left: 4rem;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    height: 740px;
+}
+
+#menu-icon{
+    font-size: 3.6rem;
+    color: var(--text-color);
+    display: none;
+}
+
+
+.home-contant h3 {
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+
+.home-contant h3:nth-of-type(2) {
+    margin-bottom: 2rem;
+}
+
+ span {
+    color: var(--main-color)
+ }
+
+.home-contant h1 {
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.home-img img {
+    width: 35vw;
+    margin-top: 80px;
+    margin-left: 30px;
+    animation:floatImage 4s ease-in-out infinite;
+    
+}
+
+.home-contant p{
+    font-size: 1.6rem;
+    
+}
+
+@keyframes floatImage {
+    0%{
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-2.4rem);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border:.2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color:var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: .5s ease;
+}
+
+.social-media a:hover {
+    background: var(--main-color);
+    color:var(--second-bg-color);
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    box-shadow:0 0 1rem var(--main-color);
+    color: var(--second-bg-color);
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition: .5s ease;
+}
+
+.btn:hover{
+    box-shadow: none;
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:2rem;
+    background: var(--second-bg-color);
+    height: 750px;
+}
+
+.about-img img{
+    width:35vw;
+    margin-right: 60px;
+    margin-top: 40px;
+}
+
+.heading{
+    text-align: center;
+    font-size: 4.5rem;
+    margin-top: 5rem;
+}
+
+.about-contant h2 {
+    text-align:left;
+    line-height: 1.2;
+}
+
+.about-contant h3{
+    font-size:2.6rem;
+}
+
+.about-contant p {
+    font-size: 1.6rem;
+    margin:2rem 0 3rem
+}
+
+#more {
+    display: none;
+    color: var(--text-color);
+}
+.services h2{
+    margin-bottom: 5rem;
+}
+
+.services{
+    height: 730px;
+    padding-top: 50px ;
+       
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 100px;
+}
+
+.services-container .services-box{
+    flex: 1 1 30rem;
+    background:var(--second-bg-color);
+    padding: 3rem 2rem 4rem ;
+    border-radius: 2rem;
+    text-align:center;
+    border: .2rem solid var(--bg-color);
+    transition: .5s ease;
+    margin-left: 20px ;
+    margin-right: 20px;
+    
+}
+
+.services-container .services-box:hover{
+    border-color: var(--main-color);
+    transform: scale(1.02);
+}
+
+
+
+.services-box h3 {
+    font-size:2.6rem;
+}
+
+.services-box i {
+    font-size: 7rem;
+    color:var(--main-color);
+}
+
+.services-box p {
+    font-size: 1.6rem;
+    margin: 1rem 0 3rem; 
+}
+
+.portfolio {
+    background-color: var(--second-bg-color);   
+    padding-top: 30px; 
+}
+
+.portfolio h2 {
+    margin-bottom: 4rem;
+}
+
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 2.5rem;
+    padding-left:20px;
+    padding-right: 20px;
+    padding-bottom:10px ;
+}
+
+.portfolio-container .portfolio-box{
+    position: relative;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem var(--bg-color);
+    overflow: hidden;
+    display: flex;
+}
+
+.portfolio-box img{
+    width: 100%;
+    transition: .5s ease;
+}
+
+.portfolio-box:hover img {
+  transform: scale(1.1);
+}
+
+.portfolio-box .portfolio-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, .1), var(--main-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 4rem;
+    transform: translateY(100%);
+    transition: .5s ease;
+}
+.portfolio-box:hover .portfolio-layer{
+    transform: translateY(0);
+}
+
+.portfolio-layer h4 {
+    font-size: 3rem;
+}
+
+.portfolio-layer p{
+    font-size: 1.6rem;
+    margin: .3rem 0 1rem;
+}
+
+.portfolio-layer a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: var(--text-color);
+    border-radius:50%;
+}
+
+.portfolio-layer a i{
+    font-size: 2rem;
+    color: var(--second-bg-color);
+}
+
+.contact {
+    padding-top: 20px;
+}
+
+.contact h2 {
+    margin-bottom: 3rem;
+}
+
+.contact form{
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact form .input-box input,
+.contact form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color:var(--text-color);
+    background: var(--second-bg-color);
+    border-radius: .8rem;
+    margin: .7rem 0;
+}
+.contact form .input-box input {
+    width:49%;
+}
+
+.contact form textarea {
+    resize: none ;
+}
+
+.contact form .btn {
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background-color: var(--second-bg-color);    
+}
+
+.footer-text p{
+    font-size: 1.6rem;
+}
+
+.footer-iconTop a{
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: var(--main-color);
+    border-radius: .8rem;
+    transition: .5s ease;
+}
+.footer-iconTop a:hover {
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.footer-iconTop a i {
+    font-size: 2.4rem;
+    color: var(--second-bg-color);
+}
+
+/*BREKPOINTS*/
+@media (max-width:1200px){
+    html{
+        font-size: 55%;
+    }
+}
+
+@media (max-width:991px){
+    .header{
+        padding:2rem 3%;
+    }
+    section{
+        padding: 10rem 3% 2rem;
+    }
+
+    .services {
+        padding-bottom: 7rem;
+    }
+
+    .portfolio {
+        padding-bottom: 7rem;
+    }
+
+    .footer{
+        padding: 2rem 3%;
+    }
+}
+
+@media(max-width:768px){
+    #menu-icon{
+        display: block;
+    }
+
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background:var(--bg-color) ;
+        border-top: .1rem solid rgba(0, 0, 0, .2 ) ;
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        display: none;
+    }
+    
+    .navbar .active {
+        display: block;
+    }
+
+    .navbar a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    .home{
+        flex-direction: column;
+    }
+
+    .home-contant h3{
+       font-size: 2.6rem;
+    }
+
+    .home-contant h1{
+        font: 5rem;
+    }
+
+    .home-img img{
+        width: 70vw;
+        margin-top: 4rem;
+    }
+
+    .about {
+        flex-direction: column-reverse;
+    }
+
+    .about img {
+        width: 70vw;
+        margin-top: 4rem;
+    }
+
+    .services h2 {
+        margin-top: 3rem;
+    }
+
+    .portfolio h2 {
+        margin-top: 3rem;
+    }
+
+    .portfolio-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (max-width:617px){
+    .portfolio-container{
+        grid-template-columns: 1fr;
+    }
+
+    .home img {
+        height: 30rem;
+        width: 30rem;
+        margin-bottom: 10px;
+    }
+
+    .about img {
+        height: 28rem;
+        width: 28rem;
+        margin-bottom: 30px;
+    }
+
+    .services {
+        padding-bottom: 900px ;
+        
+    }
+
+.about {
+    height: 100%;
+}
+    
+
+}
+
+@media (max-width:450px){
+    html{
+        font-size: 50%;
+    }
+
+    .home img {
+        height: 10px;
+    }
+
+    .contact from .input-box input{
+        width: 100%;
+    }
+}
+
+@media (max-width:375px){}
+
+ </style>
+
+    
+
+
+</head>
+<body>
+    <header class="header">
+       <a href="#" class="logo">Portfolio</a>
+       
+       <i class='bx bx-menu' id="menu-icon"></i>
+
+       <nav class="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+       </nav>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-contant">
+            <h3>Hello, it's Me</h3>
+            <h1>SUMIT NIKHADE</h1>
+            <h3>And I'm a <span class="multiple-text"></span></h3>
+            <p>Hey there! This is my personal portfolio website.
+            <br>In this website you see my work and can contact me.</p>
+
+             <div class="social-media">
+                <a href="https://www.linkedin.com/in/sumit-nikhade?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class='bx bxl-linkedin' ></i></a>
+                <a href="https://github.com/SumitNikhade/Alfido-tech." target="_blank"><i class='bx bxl-github'></i></a>
+                <a href="https://www.instagram.com/itz_me_sumit____?igsh=YzAwZjE1ZTI0Zg== target="_blank"><i class='bx bxl-instagram' ></i></a>
+                
+               
+             </div>
+             
+        </div>
+        <!-- https://raw.githubusercontent.com/shrikrishnachannawar/myPortfolio/1ffcbfbcb55479312e3078e0d0b29831fe0c431d/images/my_resume.pdf -->
+        <div class="home-img">
+            <img src="images/myphoto.png" alt="">
+        </div>
+    </section>
+
+    <!-- about section design-->
+
+
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="images/myphoto.png"  alt="">
+        </div>
+
+        <div class="about-contant">
+            <h2 class="heading">About <span>Me</span></h2>
+            <h3>Data Analyst</h3>
+            <p>Passionate college student from Dr.D.Y.Patil Institute of Engineering Management & Reaseach,Pune. 
+                 Pursuing B.E in Artificial Intelligence and Data Science and have experience in machine learning, data analysis 
+               and front-end development.  I am Technical Associative in Artificial Intelligencea Student Association and Tecnical Coordinator in technical club called Novus Neurons , seeking to blend creativity and innovation to solve real-world challenges. 
+               Committed to continuous learning and growth. <span id="dots">...</span> <span id="more"><br>Dedicated to translating intricate concepts into user-friendly designs and leveraging 
+                data-driven insights to derive meaningful solutions. Excited to collaborate across disciplines, driven by curiosity and a determination to make a
+                 positive impact. Eager to contribute my skills and enthusiasm to forward-thinking projects
+                <br>I have also done Some certification from google in data analysis and ux design.
+                   I have also completed Machine Learning and Data Sceince course from udemy.
+                    </span></p>
+
+            <button class="btn" id="btn" onclick="MoreLess()">Read More</button>
+        </div>
+    </section>
+
+    <!--service section design-->
+
+
+    <section class="services" id="services">
+        <h2 class="heading" id="service-heading">Our <span>Services</span></h2>
+
+        <div class="services-container">
+            <div class="services-box">
+                <i class='bx bx-data'></i>
+                <h3>Data Analyst</h3>
+                <p>I can provide the Data Preprocessing, Data Modeling.
+                   I have done 2 to 3 Projects in Machine Learning. <span id="dots">...</span>  <span id="more">I have completed the machine learning and data science course 
+                    in udemy.</span></p>
+                <button class="btn" id="btn" onclick="MoreLess()">Read More</button>    
+            </div>
+
+            <div class="services-box">
+                <i class='bx bxs-paint'></i>
+                <h3>Front-End-Development</h3>
+                <p>I can Provide the FrontEnd for website using HTML,CSS and Java-Script.
+                    I have also done some project on Frontend Development. <span id="dots">...</span> <span id="more"></span> 
+                </p>
+                <button class="btn" id="button" onclick="MoreLess()">Read More</button>    
+            </div>
+        </div>
+    </section>
+
+    <!-- portfolio section-->
+
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading">Latest <span>Project</span></h2>
+
+        <div class="portfolio-container">
+            <div class="portfolio-box">
+                <img src="images/portfolio1.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Machine Learning</h4>
+                    <p>Dog-Breed-identification-model
+                    <br>Made this model using TensorFLow Libraries for more info you can use my below link</p>
+                    
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="images/portfolio2.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Machine Learning</h4>
+                    <p>Bulldozer-price-prediction-model
+                    <br>Made this model using Sklearn Libraries for more info you can use my below link </p>
+                   
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="images/portfolio3.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Machine Learning</h4>
+                    <p>Heart-Disease-prediction-model 
+                    <br>Made this model using Sklearn Libraries for more info you can use my below link</p>
+                   
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="images/portfolio4.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Coming Soon</h4>
+                    <p></p>
+                    <a href="#"><i class='bx bx-link-external' ></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="images/portfolio5.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Coming Soon</h4>
+                    <p></p>
+                    <a href="#"><i class='bx bx-link-external' ></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="images/portfolio6.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Coming Soon</h4>
+                    <p></p>
+                    <a href="#"><i class='bx bx-link-external' ></i></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!--contect scection design-->
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me!</span></h2>
+
+        <form action="#">
+            <div class="input-box">
+                <input type="text" placeholder="Full Name">
+                <input type="email" placeholder="Email Address">
+            </div>
+            <div class="input-box">
+                <input type="number" placeholder="Mobile Number">
+                <input type="text" placeholder="Email subject">
+            </div>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <input type="submit" value="Send Message" class="btn">
+        </form>
+    </section>
+
+    <!--footer section design-->
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2023 by SUMIT NIKHADE | All Rights Reserved.<</p>
+        </div>
+
+        <div class="footer-iconTop">
+            <a href="#home"><i class='bx bx-up-arrow-alt' ></i></a>
+        </div>
+    </footer>
+
+    <!--scroll reveal-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--typed.js-->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+     <script>  /*toggle icon navbar*/
+        let menuIcon=document.querySelector('#menu-icon');
+        let navbar=document.querySelector('.navbar');
+        
+        menuIcon.onclick = () =>{
+            menuIcon.classList.toggle('bx-x')
+            navbar.classList.toggle('.active')
+            
+        };
+        
+        
+        /*=================== scroll section active link==============*/
+        let sections=document.querySelectorAll('section')
+        let navLinks=document.querySelectorAll('header nav a')
+        
+        window.onscroll=()=>{
+            sections.forEach(sec=>
+            {
+                let top=window.screenY;
+                let offset=sec.offset-150;
+                let height = sec.offsetHeight;
+                let id =sec.getAttribute('id')
+        
+                if(top>= offset && top < offset + height){
+                    navLinks.forEach(links=>{
+                        links.classList.remove("active");
+                        document.querySelector('header nav a[herf*='+id+']').classList.add('active');
+                    });
+                }
+            });
+        
+            /*sticky navbar*/
+            let header=document.querySelector('header');
+        
+            header.classList.toggle('sticky',window.scrollY>100)
+        
+             /*remove toggle icon navbar when click navbar links (score)*/
+             menuIcon.classList.remove('bx-x');
+             navbar.classList.toggle('active')
+        };
+        
+        /*scroll reveal*/
+        ScrollReveal({ 
+            reset: true,
+            distance:'80px',
+            duration:2000,
+            delay:200 });
+        
+            ScrollReveal().reveal('.home-contant, .heading',{origin:'top'});
+            ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form',{origin:'bottom'});
+            ScrollReveal().reveal('.home-contant h1, .about-img',{origin:'left'});
+            ScrollReveal().reveal('.home-contant p, .about-contant',{origin:'right'});
+        
+            /* typed js*/
+            const typed=new Typed('.multiple-text',{
+                strings:['Data Analyst','Frontend Developer',' Machine Learning Engineer'],
+                typeSpeed:100,
+                backSpeed:100,
+                backDelay:1000,
+                loop:true
+            });
+        
+            function MoreLess(){
+                var dots=document.getElementById("dots");
+                var moretext=document.getElementById("more");
+                var btntext=document.getElementById("btn")
+                if(dots.style.display!='none'){
+                    dots.style.display='none';
+                    moretext.style.display="inline";
+                    btntext.innerHTML="Read Less";
+                }
+        
+                else{
+                    dots.style.display='inline';
+                    moretext.style.display="none" ;
+                    btntext.innerHTML="Read More";
+                }
+            }
+            </script>
+</body>
+</html>
